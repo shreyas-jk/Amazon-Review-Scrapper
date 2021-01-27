@@ -35,7 +35,7 @@ python amazon-review-scrapper.py --u "[url]" --n 3 --i 7
 Above command will download reviews from [n] pages with an interval of 7 secs. 
 
 # Why is it not fetching reviews?
-This script works, But there's a limit! After running the script successfully for sometime, Amazon revokes the privilege for reading their HTML source and thus the script won't be able to scrape it anymore. The privilge will be reset after certain sometime (maybe 24 hours). In that case, you can try using VPN or sadly, just wait for a day :(
+This script works! But there's a limit! (not set by me but Amazon). After running the script successfully for sometime, Amazon revokes the privilege for reading their HTML source and thus the script won't be able to scrape it anymore. The privilge will be reset after certain sometime (maybe 24 hours). In that case, you can try using VPN or sadly, just wait for a day :(
 
 To check if that's the case for not retrieve thet data, on running the script generates a file names 'lastcall.txt', which is basically the raw HTML file. 
 
