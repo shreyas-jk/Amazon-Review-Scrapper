@@ -34,6 +34,8 @@ python amazon-review-scrapper.py --u "[url]" --n 3 --i 7
 ```
 Above command will download reviews from [n] pages with an interval of 7 secs. 
 
+![alt text](https://i.ibb.co/ZKrz43s/Capture.png)
+
 # Why is it not fetching reviews?
 This script works! But there's a limit! (not set by me but Amazon). 
 
