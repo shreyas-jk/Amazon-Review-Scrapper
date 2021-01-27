@@ -37,9 +37,9 @@ Above command will download reviews from [n] pages with an interval of 7 secs.
 # Why is it not fetching reviews?
 This script works! But there's a limit! (not set by me but Amazon). 
 
-After running the script successfully for multiple times, Amazon revokes the privilege for reading their HTML source and thus the script won't be able to scrape it anymore. The privilge will be reset after certain sometime (maybe 24 hours). In that case, you can try using VPN or sadly, just wait for a day :(
+After running the script successfully for multiple times, Amazon revokes the privilege of reading their HTML source and thus the script won't be able to scrape it anymore. The privilge resets after a certain period (maybe 24 hours). In that case, you can try using VPN or sadly, just wait for a day.
 
-To check if that's the case for not retrieve thet data, on running the script generates a file names 'lastcall.txt', which is basically the raw HTML file. 
+To check if that's the case for not retrieve thet data, on running the script generates a file names 'lastcall.txt', which is basically the raw HTML file of the last request call. 
 
 ## Note
 The [url] needs to be the Amazon product url, not the review page url.
