@@ -1,6 +1,6 @@
 # Amazon Review Scrapper
 
-Using this repository, you can retrieve customer review from Amazon without any coding. Passing approriates parameters, you'll be able to run the script and get all reviews with ease.
+Using this repository, you can retrieve customer reviews from Amazon without any coding. Passing appropriate parameters, you'll be able to run the script and get all reviews with ease.
 
 The retrieve reviews will be exported in the same directory (csv format).
 
