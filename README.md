@@ -14,7 +14,6 @@ Using this repository, you can retrieve customer review from Amazon without any 
 
 # Tell me how to run? 
 
-Below are some combinations, you can run the program:
 
 ```sh
 python amazon-review-scrapper.py --u "[url]" --n 3
