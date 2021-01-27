@@ -18,7 +18,7 @@ Using this repository, you can retrieve customer review from Amazon without any 
 ```sh
 python amazon-review-scrapper.py --u "[url]" --n 3
 ```
-Above command will download reviews from frist 3 pages starting from 1st review page.
+Above command will download reviews from first 3 pages starting from 1st review page.
 
 
 ```sh
@@ -31,3 +31,6 @@ Above command will download reviews from 3 pages starting from page 10 (i.e from
 python amazon-review-scrapper.py --u "[url]" --n 3 --i 7
 ```
 Above command will download reviews from [n] pages with an interval of 7 secs. 
+
+## Note
+The [url] needs to be the Amazon product url, not the review page url.
