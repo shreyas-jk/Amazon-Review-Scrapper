@@ -5,6 +5,11 @@ from urllib.parse import urlsplit, urlunsplit
 import time
 import pandas as pd 
 
+def writeFile(data):
+    file = open("lastcall.txt", "w", encoding='utf-8')
+    file.write(data)
+    file.close()
+    
 def rm_RBrackets(value):
     return value.replace("[","").replace("]","")
     
@@ -21,8 +26,7 @@ def getContent(site):
     for node in review_span:
         value = rm_RBrackets(str(node.findAll(text=True)))
         if value != "": 
-            new_row = {'title': '', 'body': str(value.lstrip("'").lstrip('"')) }
-            review_set = review_set.append(new_row, ignore_index = True)    
+            review_set = review_set.append({'reviews': str(value.lstrip("'").lstrip('"')) }, ignore_index = True)    
     reviews = review_set.copy()
     return reviews
 
@@ -35,6 +39,7 @@ def generateReviewEndPoints(url, start, no_pages):
 def getReviewPageUrl(site, baseUrl):
     response = requests.get(site)
     soup = BeautifulSoup(response.text, 'html.parser')
+    writeFile(str(soup))
     url_block = soup.select("body div .a-link-emphasis")
     soup = BeautifulSoup(rm_RBrackets(str(url_block)), "html.parser").a
     return baseUrl + soup['href']
@@ -57,10 +62,10 @@ if __name__ == "__main__":
     start = 1 if args.s is None else args.s
     
     print('Operation delay set {} after each fetch'.format(interval))
-    review_fullset = pd.DataFrame(columns = ['title', 'body']) 
+    review_fullset = pd.DataFrame(columns = ['reviews']) 
     baseUrl = getBaseUrl(args.u) 
     review_mainpage_url = getReviewPageUrl(args.u, baseUrl)
-    reviewUrlList = generateReviewEndPoints(review_mainpage_url, args.s, args.n)
+    reviewUrlList = generateReviewEndPoints(review_mainpage_url, start, args.n)
     
     for index, url in enumerate(reviewUrlList):
         print('Fetching reviews from page {}...'.format(start + index))
